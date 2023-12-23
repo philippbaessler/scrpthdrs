@@ -1,11 +1,13 @@
 Package: scrpthdrs
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Script Headers
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person("Philipp", "Baessler", email = "dev@philipb.com", role = c("aut", "cre"))
+Description: Use an RStudio addin to create comment headers for R script files.
+License: MIT + file LICENSE
+Imports:
+    rstudioapi
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
