@@ -14,7 +14,7 @@ commentHeaderAddin <- function() {
                     class = "toggle-switch",
                     tags$label(
                         class = "switch",
-                        checkboxInput("toggle_size", label = "large")
+                        checkboxInput("toggle_size", label = "small")
                     )
                 ),
                 div(

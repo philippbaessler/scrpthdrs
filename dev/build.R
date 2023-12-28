@@ -8,7 +8,8 @@ devtools::document()
 sass::sass(
     sass_file("scss/style.scss"),
     output = "inst/assets/style.css",
-    options = sass_options(output_style = "compressed")
+    options = sass_options(output_style = "compressed"),
+    cache = FALSE
 )
 
 devtools::build()

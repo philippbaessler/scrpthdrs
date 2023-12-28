@@ -11,7 +11,7 @@
   display: block;
   padding-top: 6px;
   padding-left: 14px;
-  width: 109px;
+  width: 115px;
   height: 34px;
   background: #fff;
   border-radius: 4px;
@@ -26,19 +26,21 @@
 }
 
 .switch span:before {
-  content: "A";
+  content: "large";
   position: absolute;
-  left: 61px;
+  left: 58px;
+  width: 52px;
+  text-align: center;
   top: 6px;
   transition: opacity 0.2s ease;
   color: black;
 }
 
 .switch span:after {
-  content: "B";
+  content: "small";
   position: absolute;
   padding: 8px 0;
-  width: 48px;
+  width: 55px;
   height: 32px;
   line-height: 14px;
   background: #337ab7;
@@ -60,15 +62,15 @@
 }
 
 .switch input[type='checkbox']:checked + span:after {
-  content: "A";
-  left: 51px;
+  content: "large";
+  left: 58px;
   color: #fff;
-  width: 56px;
+  width: 55px;
 }
 
 .switch input[type='checkbox']:checked + span:before {
   right: auto;
-  left: 61px;
+  left: 58px;
   opacity: 0;
 }
 
