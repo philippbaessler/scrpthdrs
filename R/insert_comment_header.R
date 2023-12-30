@@ -32,8 +32,8 @@ insert_comment_header <- function(author,
         email <- " "
 
 
-    if (!is_try_success(script_title))
-        script_title <- " "
+    if (!is.null(script_title) && !is_try_success(script_title))
+        script_title <- NULL
 
 
     make_comment <- switch(type,
@@ -111,6 +111,13 @@ format_date <- function() {
     as.character(Sys.Date())
 }
 
+spacer_if_present <- function(...) {
+    vars_are_null <- vapply(list(...), is.null, logical(1))
+
+    if (!all(vars_are_null))
+        return(" ")
+}
+
 small_header_constructor <- function(header, author, email,
                                      ..., include_additional = FALSE) {
     merge_text(
@@ -136,10 +143,10 @@ large_header_constructor <- function(header, author, email, script_title, descri
     merge_text(
         many("#", 58),
         enframe_text(header, align_fn = center_fn(58)),
-        enframe_text(" ",
+        enframe_text(spacer_if_present(header),
                      script_title,
                      description,
-                     " ",
+                     spacer_if_present(description, script_title),
                      c("Created:", format_date(), "with R", format_Rversion()),
                      c("Author: ", author),
                      c(many(" ", 8), email),

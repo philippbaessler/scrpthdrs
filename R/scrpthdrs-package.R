@@ -6,9 +6,14 @@
 #' @importFrom shiny checkboxInput
 #' @importFrom shiny div
 #' @importFrom shiny fillCol
+#' @importFrom shiny observeEvent
+#' @importFrom shiny reactive
+#' @importFrom shiny req
 #' @importFrom shiny tabPanelBody
 #' @importFrom shiny tabsetPanel
 #' @importFrom shiny tags
+#' @importFrom shiny textAreaInput
 #' @importFrom shiny textInput
+#' @importFrom shiny updateTabsetPanel
 ## usethis namespace: end
 NULL
