@@ -4,9 +4,11 @@ Title: Script Headers
 Version: 0.1.0
 Authors@R: 
     person("Philipp", "Baessler", , "dev@philipb.com", role = c("aut", "cre"))
-Description: Use an RStudio addin to create comment headers for R script
-    files.
-License: MIT + file LICENSE
+Description: Provide functionality to easily insert a comment section at
+    the top of a R script file with information provided by the user and
+    basic meta data. This package comprises an RStudio addin with a basic
+    GUI.
+License: GPL (>= 3)
 Depends: 
     R (>= 4.1.0)
 Imports:
@@ -14,9 +16,15 @@ Imports:
     rstudioapi,
     shiny
 Suggests: 
+    knitr,
+    rmarkdown,
     sass,
+    spelling,
     testthat
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
+Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

@@ -5,11 +5,6 @@ lintr::lint_package()
 
 devtools::document()
 
-sass::sass(
-    sass_file("scss/style.scss"),
-    output = "inst/assets/style.css",
-    options = sass::sass_options(output_style = "compressed"),
-    cache = FALSE
-)
+source("dev/compile_sass.R")
 
 devtools::build()
