@@ -1,4 +1,4 @@
 Name: Insert comment header
 Description: Use a basic GUI to include information as comment header in an R script file.
-Binding: commenHeaderAddin
+Binding: commentHeaderAddin
 Interactive: false
