@@ -1,28 +1,27 @@
-
 # scrpthdrs
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml)
+
+[![](https://img.shields.io/badge/devel%20version-0.1.0-blue.svg)](https://github.com/scrpthdrs) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![R-CMD-check](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml) [![](https://codecov.io/gh/https://github.com/PhilippBaessler/scrpthdrs/branch/master/graph/badge.svg)](https://codecov.io/gh/https://github.com/PhilippBaessler/scrpthdrs)
+
 <!-- badges: end -->
 
-The goal of scrpthdrs is to ...
+`scrpthdrs` provides a very basic way to quickly insert a comment header at the top of an R script.
 
 ## Installation
 
 You can install the development version of scrpthdrs from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
 devtools::install_github("PhilippBaessler/scrpthdrs")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+The package provides a basic GUI via an RStudio Addin. It can be found in **Addins** ➔ `scrpthdrs` / *Insert comment header*
+
+Alternatively, the function can be called directly in the console assuming the R script file to which the comment header shall be added is open and focused in RStudio:
 
 ``` r
-library(scrpthdrs)
-## basic example code
+scrpthdrs::insert_comment_header(author = "My Name", email = "my.name@domain.com")
 ```
-

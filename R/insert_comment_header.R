@@ -12,8 +12,6 @@
 #'   default the currently focused file is used.
 #'
 #' @export
-#'
-#' @examples
 insert_comment_header <- function(author,
                                   email = NULL,
                                   header = NULL,
@@ -69,6 +67,8 @@ many <- function(x, times, edges = NULL) {
 }
 
 left_fn <- function(width) {
+    force(width)
+
     function(x) {
         if (is.null(x) || length(x) == 0)
             return(" ")
@@ -80,6 +80,8 @@ left_fn <- function(width) {
 }
 
 right_fn <- function(width) {
+    force(width)
+
     function(x) {
         if (is.null(x) || length(x) == 0)
             return(" ")
@@ -91,6 +93,8 @@ right_fn <- function(width) {
 }
 
 center_fn <- function(width) {
+    force(width)
+
     function(x) {
         if (is.null(x) || length(x) == 0)
             return(" ")
@@ -99,7 +103,7 @@ center_fn <- function(width) {
 
         n_blank <- (width - nchar(x) - 3) / 2
 
-        paste0("#", many(" ", floor(n_blank)), x, many(" ", ceiling(n_blank)), " #")
+        paste0("#", many(" ", ceiling(n_blank)), x, many(" ", floor(n_blank)), " #")
     }
 }
 

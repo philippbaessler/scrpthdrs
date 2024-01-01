@@ -1,9 +1,6 @@
-#' Title
+#' Script Header RStudio Addin
 #'
-#' @return
 #' @export
-#'
-#' @examples
 commentHeaderAddin <- function() {
     ui <- miniUI::miniPage(
         miniUI::miniContentPanel(
