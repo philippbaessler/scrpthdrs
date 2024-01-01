@@ -1,10 +1,10 @@
 usethis::use_tidy_description()
 
-rcmdcheck::rcmdcheck() # testthat
-lintr::lint_package()
+source("dev/compile_sass.R")
 
 devtools::document()
 
-source("dev/compile_sass.R")
+rcmdcheck::rcmdcheck() # testthat
+lintr::lint_package()
 
 devtools::build()
