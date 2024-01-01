@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/devel%20version-0.1.0-blue.svg)](https://github.com/scrpthdrs) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![R-CMD-check](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml) [![](https://codecov.io/gh/https://github.com/PhilippBaessler/scrpthdrs/branch/master/graph/badge.svg)](https://codecov.io/gh/https://github.com/PhilippBaessler/scrpthdrs)
+[![](https://img.shields.io/badge/devel%20version-0.1.0-blue.svg)](https://github.com/scrpthdrs) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![R-CMD-check](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PhilippBaessler/scrpthdrs/actions/workflows/R-CMD-check.yaml) [![codecov](https://codecov.io/gh/PhilippBaessler/scrpthdrs/graph/badge.svg?token=LK9VE1QU63)](https://codecov.io/gh/PhilippBaessler/scrpthdrs)
 
 <!-- badges: end -->
 
