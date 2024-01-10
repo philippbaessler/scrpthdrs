@@ -15,9 +15,9 @@ test_that("insert_comment_header() throws descriptive errors on bad inputs", {
 
 test_that("insert_comment_header() can be called", {
     local_mocked_bindings(
-        insert_header = function(...) list(...),
-        Sys.Date      = function() as.Date("2024-01-01"),
-        R.Version     = function() list(major = "4", minor = "3.2")
+        insert_header   = function(...) list(...),
+        Sys.Date        = function() as.Date("2024-01-01"),
+        format_Rversion = function() "4.3.2"
     )
 
     expect_no_error(insert_comment_header("Test", target = NULL))
@@ -32,9 +32,9 @@ test_that("insert_comment_header() can be called", {
 
 test_that("insert_comment_header() passes fuzzing", {
     local_mocked_bindings(
-        insert_header = function(...) list(...),
-        Sys.Date      = function() as.Date("2024-01-01"),
-        R.Version     = function() list(major = "4", minor = "3.2")
+        insert_header   = function(...) list(...),
+        Sys.Date        = function() as.Date("2024-01-01"),
+        format_Rversion = function() "4.3.2"
     )
 
     # fuzz test 'author'

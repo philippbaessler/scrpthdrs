@@ -20,4 +20,3 @@ NULL
 
 # enable mocking of base functions during testing
 Sys.Date <- NULL
-R.Version <- NULL
