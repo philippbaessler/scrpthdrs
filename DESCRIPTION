@@ -16,6 +16,7 @@ Imports:
     rstudioapi,
     shiny
 Suggests: 
+    fuzzr,
     knitr,
     rmarkdown,
     sass,

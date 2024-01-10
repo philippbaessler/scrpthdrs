@@ -29,6 +29,9 @@ test_that("left_fn() works", {
     expect_equal(fn_a("hello"), "# hello  #")
     expect_equal(fn_b("hello"), "# hello            #")
     expect_equal(fn_a("hello world"), "# hel... #")
+    expect_equal(fn_a(NULL), " ")
+    expect_equal(fn_a(character()), " ")
+
 })
 
 test_that("right_fn() works", {
@@ -42,6 +45,8 @@ test_that("right_fn() works", {
     expect_equal(fn_a("hello"), "#  hello #")
     expect_equal(fn_b("hello"), "#            hello #")
     expect_equal(fn_a("hello world"), "# hel... #")
+    expect_equal(fn_a(NULL), " ")
+    expect_equal(fn_a(character()), " ")
 })
 
 test_that("center_fn() works", {
@@ -55,6 +60,8 @@ test_that("center_fn() works", {
     expect_equal(fn_a("hello"), "#   hello    #")
     expect_equal(fn_b("hello"), "#       hello       #")
     expect_equal(fn_a("hello world"), "# hello w... #")
+    expect_equal(fn_a(NULL), " ")
+    expect_equal(fn_a(character()), " ")
 })
 
 test_that("space_if_present() works", {
@@ -132,4 +139,16 @@ test_that("large_header_constructor() works", {
     expect_equal(nchar(header), 1063)
     expect_equal(substr(header, 1, 59), paste0(paste(rep("#", 58), collapse = ""), "\n"))
     expect_equal(substr(header, 1003, 1063), paste0("\n", paste(rep("#", 58), collapse = ""), "\n\n"))
+})
+
+test_that("check_variable() works", {
+    var_a <- NULL
+    var_b <- "char"
+    var_c <- 1L
+
+    expect_no_error(check_variable(var_a))
+    expect_no_error(check_variable(var_b))
+    expect_no_error(check_variable(var_c, list(is.integer)))
+    expect_error(check_variable(var_c, list(is.null, is.data.frame)),
+                 regexp = "var_c.+is\\.null.+is\\.data\\.frame")
 })

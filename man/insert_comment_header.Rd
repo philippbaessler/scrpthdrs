@@ -19,18 +19,20 @@ insert_comment_header(
 
 \item{email}{Email of the creator of the script.}
 
-\item{header}{Brief title of the script}
+\item{header}{A brief title of the script}
 
 \item{description}{Description of the script.}
 
-\item{script_title}{The name of the script.}
+\item{script_title}{The file name of the script. By default, the file name of the script file is
+used if it has already been saved or is skipped silently otherwise.}
 
 \item{type}{Appearance of the header. Either \emph{"small"} (the default) to create a smaller
 format with a lesser footprint, or \emph{"large"} to create a larger header comprising more
 details.}
 
-\item{target}{The name of the target R script. It must be opened in RStudio's editor pane. By
-default the currently focused file is used.}
+\item{target}{The RStudio id of the target R script. It must be opened in RStudio's editor pane.
+By default the currently focused file is used. The id can be obtained using
+\code{rstudioapi::documentId()}.}
 }
 \description{
 Insert a comment header into am R script

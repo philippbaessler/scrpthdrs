@@ -1,15 +1,29 @@
+##################################################
+# Created: 2024-01-10 with R 4.3.2               #
+# Author:  -                                     #
+#                                                #
+##################################################
+
+##################################################
+# Created: 2024-01-10 with R 4.3.2               #
+# Author:  Test                                  #
+#                                                #
+##################################################
+
 #' Insert a comment header into am R script
 #'
 #' @param author Name of the creator of the script.
 #' @param email Email of the creator of the script.
-#' @param header Brief title of the script
+#' @param header A brief title of the script
 #' @param description Description of the script.
-#' @param script_title The name of the script.
+#' @param script_title The file name of the script. By default, the file name of the script file is
+#'   used if it has already been saved or is skipped silently otherwise.
 #' @param type Appearance of the header. Either \emph{"small"} (the default) to create a smaller
 #'   format with a lesser footprint, or \emph{"large"} to create a larger header comprising more
 #'   details.
-#' @param target The name of the target R script. It must be opened in RStudio's editor pane. By
-#'   default the currently focused file is used.
+#' @param target The RStudio id of the target R script. It must be opened in RStudio's editor pane.
+#'   By default the currently focused file is used. The id can be obtained using
+#'   `rstudioapi::documentId()`.
 #'
 #' @export
 insert_comment_header <- function(author,
@@ -22,15 +36,17 @@ insert_comment_header <- function(author,
 
     type <- match.arg(type)
 
+    check_variable(author)
+    check_variable(email)
+    check_variable(header)
+    check_variable(description)
+
+
     if (is.null(author))
         author <- "-"
 
 
-    if (is.null(email))
-        email <- " "
-
-
-    if (!is.null(script_title) && !is_try_success(script_title))
+    if (!is_try_success(script_title))
         script_title <- NULL
 
 
@@ -39,9 +55,11 @@ insert_comment_header <- function(author,
         large = large_header_constructor
     )
 
-    range <- rstudioapi::document_range(c(1, 0), c(1, 0))
+    range    <- rstudioapi::document_range(c(1, 0), c(1, 0))
+    commment <- make_comment(header, author, email, script_title, description)
+
     rstudioapi::insertText(location = range,
-                           text = make_comment(header, author, email, script_title, description),
+                           text = commment,
                            id = target)
 
 }
@@ -184,4 +202,23 @@ merge_text <- function(...) {
 
     do.call(paste, args = c(text_parts,
                             list(sep = "\n")))
+}
+
+check_variable <- function(x, check_fn = list(is.null, is.character)) {
+    check_nm <- deparse(substitute(check_fn))
+    check_nm <- gsub("^list\\(|\\)$|[ ]+", "", check_nm)
+    check_nm <- strsplit(check_nm, ",")[[1]]
+
+    x_nm  <- deparse(substitute(x))
+    fn_nm <- deparse(sys.call(which = sys.nframe() - 1))
+    check <- vapply(check_fn, \(f) f(x), logical(1))
+
+    if (!any(check)) {
+        stop(
+            paste0(
+                "Bad input. `", x_nm, "` must match at least one of the following condition(s):\n",
+                paste("\t", check_nm, collapse = "\n")
+            )
+        )
+    }
 }

@@ -17,3 +17,6 @@
 #' @importFrom shiny updateTabsetPanel
 ## usethis namespace: end
 NULL
+
+# enable mocking of Sys.Date() during testing
+Sys.Date <- NULL
