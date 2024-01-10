@@ -96,7 +96,10 @@ test_that("merge_text() works", {
 })
 
 test_that("small_header_constructor() works", {
-    local_mocked_bindings(Sys.Date = function() as.Date("2024-01-01"))
+    local_mocked_bindings(
+        Sys.Date      = function() as.Date("2024-01-01"),
+        R.Version     = function() list(major = "4", minor = "3.2")
+    )
 
     # default behavior should ignore additional arguments in ...
     header <- small_header_constructor("hello", "world", "foo", "bar", "ok")
@@ -116,7 +119,10 @@ test_that("small_header_constructor() works", {
 })
 
 test_that("large_header_constructor() works", {
-    local_mocked_bindings(Sys.Date = function() as.Date("2024-01-01"))
+    local_mocked_bindings(
+        Sys.Date      = function() as.Date("2024-01-01"),
+        R.Version     = function() list(major = "4", minor = "3.2")
+    )
 
     # default behavior should ignore additional arguments in ...
     header <- large_header_constructor("hello", "world", "foo", "bar", "ok", "abc", "def")

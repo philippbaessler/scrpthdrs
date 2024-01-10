@@ -18,5 +18,6 @@
 ## usethis namespace: end
 NULL
 
-# enable mocking of Sys.Date() during testing
+# enable mocking of base functions during testing
 Sys.Date <- NULL
+R.Version <- NULL
