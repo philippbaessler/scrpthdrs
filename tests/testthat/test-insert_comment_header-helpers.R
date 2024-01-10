@@ -96,15 +96,15 @@ test_that("merge_text() works", {
 })
 
 test_that("small_header_constructor() works", {
+    local_mocked_bindings(Sys.Date = function() as.Date("2024-01-01"))
+
     # default behavior should ignore additional arguments in ...
     header <- small_header_constructor("hello", "world", "foo", "bar", "ok")
     contained <- vapply(c("hello", "world", "foo", "bar", "ok"), \(x) grepl(x, header), logical(1))
 
     expect_true(all(contained[1:3]))
     expect_true(all(!contained[4:5]))
-    expect_equal(nchar(header), 307)
-    expect_equal(substr(header, 1, 51), paste0(paste(rep("#", 50), collapse = ""), "\n"))
-    expect_equal(substr(header, 255, 307), paste0("\n", paste(rep("#", 50), collapse = ""), "\n\n"))
+    expect_snapshot(header)
 
     # additional arguments should be included if include_additional==TRUE
     header <- small_header_constructor("hello", "world", "foo", "bar", "ok",
@@ -112,12 +112,12 @@ test_that("small_header_constructor() works", {
 
     contained <- vapply(c("hello", "world", "foo", "bar", "ok"), \(x) grepl(x, header), logical(1))
     expect_true(all(contained))
-    expect_equal(nchar(header), 460)
-    expect_equal(substr(header, 1, 51), paste0(paste(rep("#", 50), collapse = ""), "\n"))
-    expect_equal(substr(header, 408, 460), paste0("\n", paste(rep("#", 50), collapse = ""), "\n\n"))
+    expect_snapshot(header)
 })
 
 test_that("large_header_constructor() works", {
+    local_mocked_bindings(Sys.Date = function() as.Date("2024-01-01"))
+
     # default behavior should ignore additional arguments in ...
     header <- large_header_constructor("hello", "world", "foo", "bar", "ok", "abc", "def")
     contained <- vapply(c("hello", "world", "foo", "bar", "ok", "abc", "def"),
@@ -126,9 +126,7 @@ test_that("large_header_constructor() works", {
 
     expect_true(all(contained[1:5]))
     expect_true(all(!contained[6:7]))
-    expect_equal(nchar(header), 768)
-    expect_equal(substr(header, 1, 59), paste0(paste(rep("#", 58), collapse = ""), "\n"))
-    expect_equal(substr(header, 708, 768), paste0("\n", paste(rep("#", 58), collapse = ""), "\n\n"))
+    expect_snapshot(header)
 
     # additional arguments should be included if include_additional==TRUE
     header <- large_header_constructor("hello", "world", "foo", "bar", "ok", "abc", "def",
@@ -136,9 +134,7 @@ test_that("large_header_constructor() works", {
 
     contained <- vapply(c("hello", "world", "foo", "bar", "ok", "abc", "def"), \(x) grepl(x, header), logical(1))
     expect_true(all(contained))
-    expect_equal(nchar(header), 1063)
-    expect_equal(substr(header, 1, 59), paste0(paste(rep("#", 58), collapse = ""), "\n"))
-    expect_equal(substr(header, 1003, 1063), paste0("\n", paste(rep("#", 58), collapse = ""), "\n\n"))
+    expect_snapshot(header)
 })
 
 test_that("check_variable() works", {
