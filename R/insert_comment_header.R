@@ -46,10 +46,7 @@ insert_comment_header <- function(author,
     range    <- rstudioapi::document_range(c(1, 0), c(1, 0))
     commment <- make_comment(header, author, email, script_title, description)
 
-    rstudioapi::insertText(location = range,
-                           text = commment,
-                           id = target)
-
+    insert_header(location = range, text = commment, id = target)
 }
 
 
@@ -66,6 +63,13 @@ parse_input <- function(x, width) {
         x <- paste0(substr(x, 0, width - 7), "...")
 
     x
+}
+
+# wrapper to enable mocking during unit tests
+insert_header <- function(location, text, id) {
+    rstudioapi::insertText(location = location,
+                           text = text,
+                           id = id)
 }
 
 many <- function(x, times, edges = NULL) {
