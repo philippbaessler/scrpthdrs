@@ -192,21 +192,42 @@ merge_text <- function(...) {
                             list(sep = "\n")))
 }
 
-check_variable <- function(x, check_fn = list(is.null, is.character)) {
-    check_nm <- deparse(substitute(check_fn))
-    check_nm <- gsub("^list\\(|\\)$|[ ]+", "", check_nm)
-    check_nm <- strsplit(check_nm, ",")[[1]]
+check_variable <- function(x,
+                           any_fn = list(is.null, is.character),
+                           all_fn = list(\(x) length(x) <= 1)) {
 
-    x_nm  <- deparse(substitute(x))
-    fn_nm <- deparse(sys.call(which = sys.nframe() - 1))
-    check <- vapply(check_fn, \(f) f(x), logical(1))
+    any_nm <- parse_check_fn(substitute(any_fn))
+    all_nm <- parse_check_fn(substitute(all_fn))
 
-    if (!any(check)) {
+    x_nm   <- deparse(substitute(x))
+    fn_nm  <- deparse(sys.call(which = sys.nframe() - 1))
+
+
+    check_any <- vapply(any_fn, \(f) f(x), logical(1))
+    check_all <- vapply(all_fn, \(f) f(x), logical(1))
+
+    if (!any(check_any)) {
         stop(
             paste0(
                 "Bad input. `", x_nm, "` must match at least one of the following condition(s):\n",
-                paste("\t", check_nm, collapse = "\n")
+                paste("\t", any_nm, collapse = "\n")
             )
         )
     }
+
+    if (!all(check_all)) {
+        stop(
+            paste0(
+                "Bad input. `", x_nm, "` did not match the following condition(s):\n",
+                paste("\t", all_nm[!check_all], collapse = "\n")
+            )
+        )
+    }
+}
+
+parse_check_fn <- function(fun) {
+    nm <- deparse(fun)
+    nm <- gsub("^list\\(|\\)$|(function|\\\\)\\([a-zA-Z0-9_\\.]+\\)[ ]*", "", nm)
+
+    strsplit(nm, ",[ ]*")[[1]]
 }

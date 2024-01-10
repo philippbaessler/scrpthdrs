@@ -15,7 +15,7 @@
       [1] "##################################################\n# Created: 2024-01-10 with R 4.3.2               #\n# Author:  Test                                  #\n#                                                #\n##################################################\n\n"
       
       $id
-      [1] "none"
+      [1] "6EB943EC"
       
 
 # insert_comment_header() passes fuzzing
@@ -23,63 +23,63 @@
     Code
       as.data.frame(fuzz_author)
     Output
-                      author target output messages warnings
-      1           char_empty "none"   <NA>     <NA>     <NA>
-      2          char_single "none"   <NA>     <NA>     <NA>
-      3    char_single_blank "none"   <NA>     <NA>     <NA>
-      4        char_multiple "none"   <NA>     <NA>     <NA>
-      5  char_multiple_blank "none"   <NA>     <NA>     <NA>
-      6         char_with_na "none"   <NA>     <NA>     <NA>
-      7       char_single_na "none"   <NA>     <NA>     <NA>
-      8          char_all_na "none"   <NA>     <NA>     <NA>
-      9            int_empty "none"   <NA>     <NA>     <NA>
-      10          int_single "none"   <NA>     <NA>     <NA>
-      11        int_multiple "none"   <NA>     <NA>     <NA>
-      12         int_with_na "none"   <NA>     <NA>     <NA>
-      13       int_single_na "none"   <NA>     <NA>     <NA>
-      14          int_all_na "none"   <NA>     <NA>     <NA>
-      15           dbl_empty "none"   <NA>     <NA>     <NA>
-      16          dbl_single "none"   <NA>     <NA>     <NA>
-      17        dbl_mutliple "none"   <NA>     <NA>     <NA>
-      18         dbl_with_na "none"   <NA>     <NA>     <NA>
-      19       dbl_single_na "none"   <NA>     <NA>     <NA>
-      20          dbl_all_na "none"   <NA>     <NA>     <NA>
-      21          fctr_empty "none"   <NA>     <NA>     <NA>
-      22         fctr_single "none"   <NA>     <NA>     <NA>
-      23       fctr_multiple "none"   <NA>     <NA>     <NA>
-      24        fctr_with_na "none"   <NA>     <NA>     <NA>
-      25 fctr_missing_levels "none"   <NA>     <NA>     <NA>
-      26      fctr_single_na "none"   <NA>     <NA>     <NA>
-      27         fctr_all_na "none"   <NA>     <NA>     <NA>
-      28           lgl_empty "none"   <NA>     <NA>     <NA>
-      29          lgl_single "none"   <NA>     <NA>     <NA>
-      30        lgl_mutliple "none"   <NA>     <NA>     <NA>
-      31         lgl_with_na "none"   <NA>     <NA>     <NA>
-      32       lgl_single_na "none"   <NA>     <NA>     <NA>
-      33          lgl_all_na "none"   <NA>     <NA>     <NA>
-      34         date_single "none"   <NA>     <NA>     <NA>
-      35       date_multiple "none"   <NA>     <NA>     <NA>
-      36        date_with_na "none"   <NA>     <NA>     <NA>
-      37      date_single_na "none"   <NA>     <NA>     <NA>
-      38         date_all_na "none"   <NA>     <NA>     <NA>
-      39           raw_empty "none"   <NA>     <NA>     <NA>
-      40            raw_char "none"   <NA>     <NA>     <NA>
-      41              raw_na "none"   <NA>     <NA>     <NA>
-      42         df_complete "none"   <NA>     <NA>     <NA>
-      43            df_empty "none"   <NA>     <NA>     <NA>
-      44          df_one_row "none"   <NA>     <NA>     <NA>
-      45          df_one_col "none"   <NA>     <NA>     <NA>
-      46          df_with_na "none"   <NA>     <NA>     <NA>
-      47          null_value "none"   <NA>     <NA>     <NA>
+                      author output messages warnings
+      1           char_empty   <NA>     <NA>     <NA>
+      2          char_single   <NA>     <NA>     <NA>
+      3    char_single_blank   <NA>     <NA>     <NA>
+      4        char_multiple   <NA>     <NA>     <NA>
+      5  char_multiple_blank   <NA>     <NA>     <NA>
+      6         char_with_na   <NA>     <NA>     <NA>
+      7       char_single_na   <NA>     <NA>     <NA>
+      8          char_all_na   <NA>     <NA>     <NA>
+      9            int_empty   <NA>     <NA>     <NA>
+      10          int_single   <NA>     <NA>     <NA>
+      11        int_multiple   <NA>     <NA>     <NA>
+      12         int_with_na   <NA>     <NA>     <NA>
+      13       int_single_na   <NA>     <NA>     <NA>
+      14          int_all_na   <NA>     <NA>     <NA>
+      15           dbl_empty   <NA>     <NA>     <NA>
+      16          dbl_single   <NA>     <NA>     <NA>
+      17        dbl_mutliple   <NA>     <NA>     <NA>
+      18         dbl_with_na   <NA>     <NA>     <NA>
+      19       dbl_single_na   <NA>     <NA>     <NA>
+      20          dbl_all_na   <NA>     <NA>     <NA>
+      21          fctr_empty   <NA>     <NA>     <NA>
+      22         fctr_single   <NA>     <NA>     <NA>
+      23       fctr_multiple   <NA>     <NA>     <NA>
+      24        fctr_with_na   <NA>     <NA>     <NA>
+      25 fctr_missing_levels   <NA>     <NA>     <NA>
+      26      fctr_single_na   <NA>     <NA>     <NA>
+      27         fctr_all_na   <NA>     <NA>     <NA>
+      28           lgl_empty   <NA>     <NA>     <NA>
+      29          lgl_single   <NA>     <NA>     <NA>
+      30        lgl_mutliple   <NA>     <NA>     <NA>
+      31         lgl_with_na   <NA>     <NA>     <NA>
+      32       lgl_single_na   <NA>     <NA>     <NA>
+      33          lgl_all_na   <NA>     <NA>     <NA>
+      34         date_single   <NA>     <NA>     <NA>
+      35       date_multiple   <NA>     <NA>     <NA>
+      36        date_with_na   <NA>     <NA>     <NA>
+      37      date_single_na   <NA>     <NA>     <NA>
+      38         date_all_na   <NA>     <NA>     <NA>
+      39           raw_empty   <NA>     <NA>     <NA>
+      40            raw_char   <NA>     <NA>     <NA>
+      41              raw_na   <NA>     <NA>     <NA>
+      42         df_complete   <NA>     <NA>     <NA>
+      43            df_empty   <NA>     <NA>     <NA>
+      44          df_one_row   <NA>     <NA>     <NA>
+      45          df_one_col   <NA>     <NA>     <NA>
+      46          df_with_na   <NA>     <NA>     <NA>
+      47          null_value   <NA>     <NA>     <NA>
                                                                                                           errors
       1                                                                                                     <NA>
       2                                                                                                     <NA>
       3                                                                                                     <NA>
-      4                                                                                                     <NA>
-      5                                                                                                     <NA>
-      6                                                                                                     <NA>
+      4                         Bad input. `author` did not match the following condition(s):\n\t length(x) <= 1
+      5                         Bad input. `author` did not match the following condition(s):\n\t length(x) <= 1
+      6                         Bad input. `author` did not match the following condition(s):\n\t length(x) <= 1
       7                                                                                                     <NA>
-      8                                                                                                     <NA>
+      8                         Bad input. `author` did not match the following condition(s):\n\t length(x) <= 1
       9  Bad input. `author` must match at least one of the following condition(s):\n\t is.null\n\t is.character
       10 Bad input. `author` must match at least one of the following condition(s):\n\t is.null\n\t is.character
       11 Bad input. `author` must match at least one of the following condition(s):\n\t is.null\n\t is.character
@@ -123,11 +123,11 @@
       1            list             1
       2            list             2
       3            list             3
-      4            list             4
-      5            list             5
-      6            list             6
+      4            <NA>             4
+      5            <NA>             5
+      6            <NA>             6
       7            list             7
-      8            list             8
+      8            <NA>             8
       9            <NA>             9
       10           <NA>            10
       11           <NA>            11
@@ -173,54 +173,54 @@
     Code
       as.data.frame(fuzz_email)
     Output
-                       email target output messages warnings
-      1           char_empty "none"   <NA>     <NA>     <NA>
-      2          char_single "none"   <NA>     <NA>     <NA>
-      3    char_single_blank "none"   <NA>     <NA>     <NA>
-      4        char_multiple "none"   <NA>     <NA>     <NA>
-      5  char_multiple_blank "none"   <NA>     <NA>     <NA>
-      6         char_with_na "none"   <NA>     <NA>     <NA>
-      7       char_single_na "none"   <NA>     <NA>     <NA>
-      8          char_all_na "none"   <NA>     <NA>     <NA>
-      9            int_empty "none"   <NA>     <NA>     <NA>
-      10          int_single "none"   <NA>     <NA>     <NA>
-      11        int_multiple "none"   <NA>     <NA>     <NA>
-      12         int_with_na "none"   <NA>     <NA>     <NA>
-      13       int_single_na "none"   <NA>     <NA>     <NA>
-      14          int_all_na "none"   <NA>     <NA>     <NA>
-      15           dbl_empty "none"   <NA>     <NA>     <NA>
-      16          dbl_single "none"   <NA>     <NA>     <NA>
-      17        dbl_mutliple "none"   <NA>     <NA>     <NA>
-      18         dbl_with_na "none"   <NA>     <NA>     <NA>
-      19       dbl_single_na "none"   <NA>     <NA>     <NA>
-      20          dbl_all_na "none"   <NA>     <NA>     <NA>
-      21          fctr_empty "none"   <NA>     <NA>     <NA>
-      22         fctr_single "none"   <NA>     <NA>     <NA>
-      23       fctr_multiple "none"   <NA>     <NA>     <NA>
-      24        fctr_with_na "none"   <NA>     <NA>     <NA>
-      25 fctr_missing_levels "none"   <NA>     <NA>     <NA>
-      26      fctr_single_na "none"   <NA>     <NA>     <NA>
-      27         fctr_all_na "none"   <NA>     <NA>     <NA>
-      28           lgl_empty "none"   <NA>     <NA>     <NA>
-      29          lgl_single "none"   <NA>     <NA>     <NA>
-      30        lgl_mutliple "none"   <NA>     <NA>     <NA>
-      31         lgl_with_na "none"   <NA>     <NA>     <NA>
-      32       lgl_single_na "none"   <NA>     <NA>     <NA>
-      33          lgl_all_na "none"   <NA>     <NA>     <NA>
-      34         date_single "none"   <NA>     <NA>     <NA>
-      35       date_multiple "none"   <NA>     <NA>     <NA>
-      36        date_with_na "none"   <NA>     <NA>     <NA>
-      37      date_single_na "none"   <NA>     <NA>     <NA>
-      38         date_all_na "none"   <NA>     <NA>     <NA>
-      39           raw_empty "none"   <NA>     <NA>     <NA>
-      40            raw_char "none"   <NA>     <NA>     <NA>
-      41              raw_na "none"   <NA>     <NA>     <NA>
-      42         df_complete "none"   <NA>     <NA>     <NA>
-      43            df_empty "none"   <NA>     <NA>     <NA>
-      44          df_one_row "none"   <NA>     <NA>     <NA>
-      45          df_one_col "none"   <NA>     <NA>     <NA>
-      46          df_with_na "none"   <NA>     <NA>     <NA>
-      47          null_value "none"   <NA>     <NA>     <NA>
+                       email output messages warnings
+      1           char_empty   <NA>     <NA>     <NA>
+      2          char_single   <NA>     <NA>     <NA>
+      3    char_single_blank   <NA>     <NA>     <NA>
+      4        char_multiple   <NA>     <NA>     <NA>
+      5  char_multiple_blank   <NA>     <NA>     <NA>
+      6         char_with_na   <NA>     <NA>     <NA>
+      7       char_single_na   <NA>     <NA>     <NA>
+      8          char_all_na   <NA>     <NA>     <NA>
+      9            int_empty   <NA>     <NA>     <NA>
+      10          int_single   <NA>     <NA>     <NA>
+      11        int_multiple   <NA>     <NA>     <NA>
+      12         int_with_na   <NA>     <NA>     <NA>
+      13       int_single_na   <NA>     <NA>     <NA>
+      14          int_all_na   <NA>     <NA>     <NA>
+      15           dbl_empty   <NA>     <NA>     <NA>
+      16          dbl_single   <NA>     <NA>     <NA>
+      17        dbl_mutliple   <NA>     <NA>     <NA>
+      18         dbl_with_na   <NA>     <NA>     <NA>
+      19       dbl_single_na   <NA>     <NA>     <NA>
+      20          dbl_all_na   <NA>     <NA>     <NA>
+      21          fctr_empty   <NA>     <NA>     <NA>
+      22         fctr_single   <NA>     <NA>     <NA>
+      23       fctr_multiple   <NA>     <NA>     <NA>
+      24        fctr_with_na   <NA>     <NA>     <NA>
+      25 fctr_missing_levels   <NA>     <NA>     <NA>
+      26      fctr_single_na   <NA>     <NA>     <NA>
+      27         fctr_all_na   <NA>     <NA>     <NA>
+      28           lgl_empty   <NA>     <NA>     <NA>
+      29          lgl_single   <NA>     <NA>     <NA>
+      30        lgl_mutliple   <NA>     <NA>     <NA>
+      31         lgl_with_na   <NA>     <NA>     <NA>
+      32       lgl_single_na   <NA>     <NA>     <NA>
+      33          lgl_all_na   <NA>     <NA>     <NA>
+      34         date_single   <NA>     <NA>     <NA>
+      35       date_multiple   <NA>     <NA>     <NA>
+      36        date_with_na   <NA>     <NA>     <NA>
+      37      date_single_na   <NA>     <NA>     <NA>
+      38         date_all_na   <NA>     <NA>     <NA>
+      39           raw_empty   <NA>     <NA>     <NA>
+      40            raw_char   <NA>     <NA>     <NA>
+      41              raw_na   <NA>     <NA>     <NA>
+      42         df_complete   <NA>     <NA>     <NA>
+      43            df_empty   <NA>     <NA>     <NA>
+      44          df_one_row   <NA>     <NA>     <NA>
+      45          df_one_col   <NA>     <NA>     <NA>
+      46          df_with_na   <NA>     <NA>     <NA>
+      47          null_value   <NA>     <NA>     <NA>
                                                 errors result_classes results_index
       1  argument "author" is missing, with no default           <NA>             1
       2  argument "author" is missing, with no default           <NA>             2
@@ -275,54 +275,54 @@
     Code
       as.data.frame(fuzz_header)
     Output
-                      header target output messages warnings
-      1           char_empty "none"   <NA>     <NA>     <NA>
-      2          char_single "none"   <NA>     <NA>     <NA>
-      3    char_single_blank "none"   <NA>     <NA>     <NA>
-      4        char_multiple "none"   <NA>     <NA>     <NA>
-      5  char_multiple_blank "none"   <NA>     <NA>     <NA>
-      6         char_with_na "none"   <NA>     <NA>     <NA>
-      7       char_single_na "none"   <NA>     <NA>     <NA>
-      8          char_all_na "none"   <NA>     <NA>     <NA>
-      9            int_empty "none"   <NA>     <NA>     <NA>
-      10          int_single "none"   <NA>     <NA>     <NA>
-      11        int_multiple "none"   <NA>     <NA>     <NA>
-      12         int_with_na "none"   <NA>     <NA>     <NA>
-      13       int_single_na "none"   <NA>     <NA>     <NA>
-      14          int_all_na "none"   <NA>     <NA>     <NA>
-      15           dbl_empty "none"   <NA>     <NA>     <NA>
-      16          dbl_single "none"   <NA>     <NA>     <NA>
-      17        dbl_mutliple "none"   <NA>     <NA>     <NA>
-      18         dbl_with_na "none"   <NA>     <NA>     <NA>
-      19       dbl_single_na "none"   <NA>     <NA>     <NA>
-      20          dbl_all_na "none"   <NA>     <NA>     <NA>
-      21          fctr_empty "none"   <NA>     <NA>     <NA>
-      22         fctr_single "none"   <NA>     <NA>     <NA>
-      23       fctr_multiple "none"   <NA>     <NA>     <NA>
-      24        fctr_with_na "none"   <NA>     <NA>     <NA>
-      25 fctr_missing_levels "none"   <NA>     <NA>     <NA>
-      26      fctr_single_na "none"   <NA>     <NA>     <NA>
-      27         fctr_all_na "none"   <NA>     <NA>     <NA>
-      28           lgl_empty "none"   <NA>     <NA>     <NA>
-      29          lgl_single "none"   <NA>     <NA>     <NA>
-      30        lgl_mutliple "none"   <NA>     <NA>     <NA>
-      31         lgl_with_na "none"   <NA>     <NA>     <NA>
-      32       lgl_single_na "none"   <NA>     <NA>     <NA>
-      33          lgl_all_na "none"   <NA>     <NA>     <NA>
-      34         date_single "none"   <NA>     <NA>     <NA>
-      35       date_multiple "none"   <NA>     <NA>     <NA>
-      36        date_with_na "none"   <NA>     <NA>     <NA>
-      37      date_single_na "none"   <NA>     <NA>     <NA>
-      38         date_all_na "none"   <NA>     <NA>     <NA>
-      39           raw_empty "none"   <NA>     <NA>     <NA>
-      40            raw_char "none"   <NA>     <NA>     <NA>
-      41              raw_na "none"   <NA>     <NA>     <NA>
-      42         df_complete "none"   <NA>     <NA>     <NA>
-      43            df_empty "none"   <NA>     <NA>     <NA>
-      44          df_one_row "none"   <NA>     <NA>     <NA>
-      45          df_one_col "none"   <NA>     <NA>     <NA>
-      46          df_with_na "none"   <NA>     <NA>     <NA>
-      47          null_value "none"   <NA>     <NA>     <NA>
+                      header output messages warnings
+      1           char_empty   <NA>     <NA>     <NA>
+      2          char_single   <NA>     <NA>     <NA>
+      3    char_single_blank   <NA>     <NA>     <NA>
+      4        char_multiple   <NA>     <NA>     <NA>
+      5  char_multiple_blank   <NA>     <NA>     <NA>
+      6         char_with_na   <NA>     <NA>     <NA>
+      7       char_single_na   <NA>     <NA>     <NA>
+      8          char_all_na   <NA>     <NA>     <NA>
+      9            int_empty   <NA>     <NA>     <NA>
+      10          int_single   <NA>     <NA>     <NA>
+      11        int_multiple   <NA>     <NA>     <NA>
+      12         int_with_na   <NA>     <NA>     <NA>
+      13       int_single_na   <NA>     <NA>     <NA>
+      14          int_all_na   <NA>     <NA>     <NA>
+      15           dbl_empty   <NA>     <NA>     <NA>
+      16          dbl_single   <NA>     <NA>     <NA>
+      17        dbl_mutliple   <NA>     <NA>     <NA>
+      18         dbl_with_na   <NA>     <NA>     <NA>
+      19       dbl_single_na   <NA>     <NA>     <NA>
+      20          dbl_all_na   <NA>     <NA>     <NA>
+      21          fctr_empty   <NA>     <NA>     <NA>
+      22         fctr_single   <NA>     <NA>     <NA>
+      23       fctr_multiple   <NA>     <NA>     <NA>
+      24        fctr_with_na   <NA>     <NA>     <NA>
+      25 fctr_missing_levels   <NA>     <NA>     <NA>
+      26      fctr_single_na   <NA>     <NA>     <NA>
+      27         fctr_all_na   <NA>     <NA>     <NA>
+      28           lgl_empty   <NA>     <NA>     <NA>
+      29          lgl_single   <NA>     <NA>     <NA>
+      30        lgl_mutliple   <NA>     <NA>     <NA>
+      31         lgl_with_na   <NA>     <NA>     <NA>
+      32       lgl_single_na   <NA>     <NA>     <NA>
+      33          lgl_all_na   <NA>     <NA>     <NA>
+      34         date_single   <NA>     <NA>     <NA>
+      35       date_multiple   <NA>     <NA>     <NA>
+      36        date_with_na   <NA>     <NA>     <NA>
+      37      date_single_na   <NA>     <NA>     <NA>
+      38         date_all_na   <NA>     <NA>     <NA>
+      39           raw_empty   <NA>     <NA>     <NA>
+      40            raw_char   <NA>     <NA>     <NA>
+      41              raw_na   <NA>     <NA>     <NA>
+      42         df_complete   <NA>     <NA>     <NA>
+      43            df_empty   <NA>     <NA>     <NA>
+      44          df_one_row   <NA>     <NA>     <NA>
+      45          df_one_col   <NA>     <NA>     <NA>
+      46          df_with_na   <NA>     <NA>     <NA>
+      47          null_value   <NA>     <NA>     <NA>
                                                 errors result_classes results_index
       1  argument "author" is missing, with no default           <NA>             1
       2  argument "author" is missing, with no default           <NA>             2
@@ -377,54 +377,54 @@
     Code
       as.data.frame(fuzz_description)
     Output
-                 description target output messages warnings
-      1           char_empty "none"   <NA>     <NA>     <NA>
-      2          char_single "none"   <NA>     <NA>     <NA>
-      3    char_single_blank "none"   <NA>     <NA>     <NA>
-      4        char_multiple "none"   <NA>     <NA>     <NA>
-      5  char_multiple_blank "none"   <NA>     <NA>     <NA>
-      6         char_with_na "none"   <NA>     <NA>     <NA>
-      7       char_single_na "none"   <NA>     <NA>     <NA>
-      8          char_all_na "none"   <NA>     <NA>     <NA>
-      9            int_empty "none"   <NA>     <NA>     <NA>
-      10          int_single "none"   <NA>     <NA>     <NA>
-      11        int_multiple "none"   <NA>     <NA>     <NA>
-      12         int_with_na "none"   <NA>     <NA>     <NA>
-      13       int_single_na "none"   <NA>     <NA>     <NA>
-      14          int_all_na "none"   <NA>     <NA>     <NA>
-      15           dbl_empty "none"   <NA>     <NA>     <NA>
-      16          dbl_single "none"   <NA>     <NA>     <NA>
-      17        dbl_mutliple "none"   <NA>     <NA>     <NA>
-      18         dbl_with_na "none"   <NA>     <NA>     <NA>
-      19       dbl_single_na "none"   <NA>     <NA>     <NA>
-      20          dbl_all_na "none"   <NA>     <NA>     <NA>
-      21          fctr_empty "none"   <NA>     <NA>     <NA>
-      22         fctr_single "none"   <NA>     <NA>     <NA>
-      23       fctr_multiple "none"   <NA>     <NA>     <NA>
-      24        fctr_with_na "none"   <NA>     <NA>     <NA>
-      25 fctr_missing_levels "none"   <NA>     <NA>     <NA>
-      26      fctr_single_na "none"   <NA>     <NA>     <NA>
-      27         fctr_all_na "none"   <NA>     <NA>     <NA>
-      28           lgl_empty "none"   <NA>     <NA>     <NA>
-      29          lgl_single "none"   <NA>     <NA>     <NA>
-      30        lgl_mutliple "none"   <NA>     <NA>     <NA>
-      31         lgl_with_na "none"   <NA>     <NA>     <NA>
-      32       lgl_single_na "none"   <NA>     <NA>     <NA>
-      33          lgl_all_na "none"   <NA>     <NA>     <NA>
-      34         date_single "none"   <NA>     <NA>     <NA>
-      35       date_multiple "none"   <NA>     <NA>     <NA>
-      36        date_with_na "none"   <NA>     <NA>     <NA>
-      37      date_single_na "none"   <NA>     <NA>     <NA>
-      38         date_all_na "none"   <NA>     <NA>     <NA>
-      39           raw_empty "none"   <NA>     <NA>     <NA>
-      40            raw_char "none"   <NA>     <NA>     <NA>
-      41              raw_na "none"   <NA>     <NA>     <NA>
-      42         df_complete "none"   <NA>     <NA>     <NA>
-      43            df_empty "none"   <NA>     <NA>     <NA>
-      44          df_one_row "none"   <NA>     <NA>     <NA>
-      45          df_one_col "none"   <NA>     <NA>     <NA>
-      46          df_with_na "none"   <NA>     <NA>     <NA>
-      47          null_value "none"   <NA>     <NA>     <NA>
+                 description output messages warnings
+      1           char_empty   <NA>     <NA>     <NA>
+      2          char_single   <NA>     <NA>     <NA>
+      3    char_single_blank   <NA>     <NA>     <NA>
+      4        char_multiple   <NA>     <NA>     <NA>
+      5  char_multiple_blank   <NA>     <NA>     <NA>
+      6         char_with_na   <NA>     <NA>     <NA>
+      7       char_single_na   <NA>     <NA>     <NA>
+      8          char_all_na   <NA>     <NA>     <NA>
+      9            int_empty   <NA>     <NA>     <NA>
+      10          int_single   <NA>     <NA>     <NA>
+      11        int_multiple   <NA>     <NA>     <NA>
+      12         int_with_na   <NA>     <NA>     <NA>
+      13       int_single_na   <NA>     <NA>     <NA>
+      14          int_all_na   <NA>     <NA>     <NA>
+      15           dbl_empty   <NA>     <NA>     <NA>
+      16          dbl_single   <NA>     <NA>     <NA>
+      17        dbl_mutliple   <NA>     <NA>     <NA>
+      18         dbl_with_na   <NA>     <NA>     <NA>
+      19       dbl_single_na   <NA>     <NA>     <NA>
+      20          dbl_all_na   <NA>     <NA>     <NA>
+      21          fctr_empty   <NA>     <NA>     <NA>
+      22         fctr_single   <NA>     <NA>     <NA>
+      23       fctr_multiple   <NA>     <NA>     <NA>
+      24        fctr_with_na   <NA>     <NA>     <NA>
+      25 fctr_missing_levels   <NA>     <NA>     <NA>
+      26      fctr_single_na   <NA>     <NA>     <NA>
+      27         fctr_all_na   <NA>     <NA>     <NA>
+      28           lgl_empty   <NA>     <NA>     <NA>
+      29          lgl_single   <NA>     <NA>     <NA>
+      30        lgl_mutliple   <NA>     <NA>     <NA>
+      31         lgl_with_na   <NA>     <NA>     <NA>
+      32       lgl_single_na   <NA>     <NA>     <NA>
+      33          lgl_all_na   <NA>     <NA>     <NA>
+      34         date_single   <NA>     <NA>     <NA>
+      35       date_multiple   <NA>     <NA>     <NA>
+      36        date_with_na   <NA>     <NA>     <NA>
+      37      date_single_na   <NA>     <NA>     <NA>
+      38         date_all_na   <NA>     <NA>     <NA>
+      39           raw_empty   <NA>     <NA>     <NA>
+      40            raw_char   <NA>     <NA>     <NA>
+      41              raw_na   <NA>     <NA>     <NA>
+      42         df_complete   <NA>     <NA>     <NA>
+      43            df_empty   <NA>     <NA>     <NA>
+      44          df_one_row   <NA>     <NA>     <NA>
+      45          df_one_col   <NA>     <NA>     <NA>
+      46          df_with_na   <NA>     <NA>     <NA>
+      47          null_value   <NA>     <NA>     <NA>
                                                 errors result_classes results_index
       1  argument "author" is missing, with no default           <NA>             1
       2  argument "author" is missing, with no default           <NA>             2
