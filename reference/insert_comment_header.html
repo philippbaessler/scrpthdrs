@@ -73,7 +73,7 @@
 
 
 <dt>header</dt>
-<dd><p>Brief title of the script</p></dd>
+<dd><p>A brief title of the script</p></dd>
 
 
 <dt>description</dt>
@@ -81,7 +81,8 @@
 
 
 <dt>script_title</dt>
-<dd><p>The name of the script.</p></dd>
+<dd><p>The file name of the script. By default, the file name of the script file is
+used if it has already been saved or is skipped silently otherwise.</p></dd>
 
 
 <dt>type</dt>
@@ -91,8 +92,9 @@ details.</p></dd>
 
 
 <dt>target</dt>
-<dd><p>The name of the target R script. It must be opened in RStudio's editor pane. By
-default the currently focused file is used.</p></dd>
+<dd><p>The RStudio id of the target R script. It must be opened in RStudio's editor pane.
+By default the currently focused file is used. The id can be obtained using
+<code><a href="https://rstudio.github.io/rstudioapi/reference/rstudio-documents.html" class="external-link">rstudioapi::documentId()</a></code>.</p></dd>
 
 </dl></div>
 
