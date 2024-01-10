@@ -1,0 +1,1 @@
+-   maybe store the ui definition as object in the package that is loaded directly rather than generated using the ui functions (benefits? - maybe performance, tbd)

@@ -2,7 +2,15 @@
 #'
 #' @export
 commentHeaderAddin <- function() {
-    ui <- miniUI::miniPage(
+    shiny::runGadget(create_gadget_ui(), gadget_server,
+                     viewer = shiny::dialogViewer("Add Comment Header", width = 520, height = 445))
+}
+
+
+# shiny gadget definition ---------------------------------------------------------------------
+
+create_gadget_ui <- function() {
+    miniUI::miniPage(
         miniUI::miniContentPanel(
             padding = "20px",
             shiny::includeCSS(path = system.file("assets/style.css", package = "scrpthdrs")),
@@ -47,44 +55,40 @@ commentHeaderAddin <- function() {
             )
         )
     )
+}
 
-    server <- function(input, output, session) {
+gadget_server <- function(input, output, session) {
+    insert_type <- reactive({
+        if (input$toggle_size_large) {
+            "large"
+        } else {
+            "small"
+        }
+    })
 
-        insert_type <- reactive({
-            if (input$toggle_size_large) {
-                "large"
-            } else {
-                "small"
-            }
-        })
 
+    observeEvent(insert_type(), {
+        updateTabsetPanel(inputId = "ui_switcher", selected = paste0("ui_", insert_type()))
+    })
 
-        observeEvent(insert_type(), {
-            updateTabsetPanel(inputId = "ui_switcher", selected = paste0("ui_", insert_type()))
-        })
+    observeEvent(input$bt_insert, {
+        req(input$txt_author)
 
-        observeEvent(input$bt_insert, {
-            req(input$txt_author)
+        insert_options <- list(
+            author = input$txt_author,
+            email  = parse_user_input(input$txt_email),
+            header = parse_user_input(input$txt_header),
+            description = parse_user_input(input$txt_description),
+            type = insert_type()
+        )
 
-            insert_options <- list(
-                author = input$txt_author,
-                email  = parse_user_input(input$txt_email),
-                header = parse_user_input(input$txt_header),
-                description = parse_user_input(input$txt_description),
-                type = insert_type()
-            )
+        if (!input$cb_include_script_title)
+            insert_options <- c(insert_options, list(script_title = NULL))
 
-            if (!input$cb_include_script_title)
-                insert_options <- c(insert_options, list(script_title = NULL))
+        do.call(insert_comment_header, args = insert_options)
 
-            do.call(insert_comment_header, args = insert_options)
-
-            shiny::stopApp()
-        })
-    }
-
-    shiny::runGadget(ui, server,
-                     viewer = shiny::dialogViewer("Add Comment Header", width = 520, height = 445))
+        shiny::stopApp()
+    })
 }
 
 
