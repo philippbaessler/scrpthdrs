@@ -6,15 +6,6 @@ commentHeaderAddin <- function() {
                      viewer = shiny::dialogViewer("Add Comment Header", width = 520, height = 445))
 }
 
-### DEV ONLY
-insert_comment_header2 <- function(...) stop()
-abc <- function() {
-    message("hello")
-    insert_comment_header2(m = "abc")
-    return("done")
-}
-###
-
 
 # shiny gadget definition ---------------------------------------------------------------------
 
