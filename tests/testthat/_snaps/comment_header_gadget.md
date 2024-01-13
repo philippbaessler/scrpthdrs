@@ -26,3 +26,27 @@
       [1] "large"
       
 
+---
+
+    Code
+      passed_args
+    Output
+      $author
+      [1] "My name"
+      
+      $description
+      NULL
+      
+      $email
+      NULL
+      
+      $header
+      NULL
+      
+      $script_title
+      NULL
+      
+      $type
+      [1] "large"
+      
+

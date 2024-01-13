@@ -22,6 +22,7 @@ test_that("gadget server switch button works", {
 })
 
 test_that("gadget server passes user inputs to insert_comment_header", {
+    # 1
     env <- new.env()
 
     local_mocked_bindings(
@@ -30,15 +31,25 @@ test_that("gadget server passes user inputs to insert_comment_header", {
 
     shiny::testServer(create_gadget_server(), {
         session$setInputs(toggle_size_large = TRUE)
-
         session$setInputs(txt_author = "My name")
         session$setInputs(txt_email = "My email")
         session$setInputs(txt_header = "Header")
         session$setInputs(txt_description = "Some description")
         session$setInputs(cb_include_script_title = TRUE)
-
         session$setInputs(bt_insert = 1)
+    })
 
+    passed_args <- Map(\(x) get(x, envir = env), ls(envir = env))
+    expect_snapshot(passed_args)
+
+    # 2
+    env <- new.env()
+
+    shiny::testServer(create_gadget_server(), {
+        session$setInputs(toggle_size_large = TRUE)
+        session$setInputs(txt_author = "My name")
+        session$setInputs(cb_include_script_title = FALSE)
+        session$setInputs(bt_insert = 1)
     })
 
     passed_args <- Map(\(x) get(x, envir = env), ls(envir = env))
@@ -70,4 +81,9 @@ test_that("gadget app works", {
     app$set_inputs(cb_include_script_title = TRUE)
     app$set_inputs(txt_description = "Ok")
     app$expect_values()
+})
+
+test_that("parse_user_input() helper function works",  {
+    expect_null(parse_user_input(character()))
+    expect_equal(parse_user_input("hello"), "hello")
 })
