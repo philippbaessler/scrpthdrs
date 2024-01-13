@@ -1,10 +1,15 @@
-# test css file
+test_that("css file did not change", {
+    expect_snapshot_file(path = system.file("assets/style.css", package = "scrpthdrs"),
+                         compare = compare_file_text)
+})
 
-# test_that("gadget ui is created correctly", {
-#     ui <- as.character(create_gadget_ui())
-#
-#     expect_snapshot(ui)
-# })
+test_that("gadget ui is created correctly", {
+    ui <- as.character(create_gadget_ui())
+    ui <- gsub("tab\\-\\d{4}\\-\\d", "XTABIDX", ui)
+    ui <- gsub("(data\\-tabsetid=)\"\\d{4}\"", "\\1XTABSETIDX", ui)
+
+    expect_snapshot(ui)
+})
 
 test_that("gadget server switch button works", {
     shiny::testServer(create_gadget_server(), {
