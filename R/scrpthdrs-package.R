@@ -1,3 +1,10 @@
+#' Script Headers package
+#'
+#' @description
+#' Insert comment headers in your R script files opened in RStudio to include basic meta data.
+#' Learn more about this package in the vignette "insert_script_headers":
+#' `vignette(insert_script_headers, package = "scrpthdrs")`
+#'
 #' @keywords internal
 "_PACKAGE"
 

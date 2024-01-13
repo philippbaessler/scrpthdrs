@@ -202,9 +202,7 @@ check_variable <- function(x,
 
     any_nm <- parse_check_fn(substitute(any_fn))
     all_nm <- parse_check_fn(substitute(all_fn))
-
     x_nm   <- deparse(substitute(x))
-    fn_nm  <- deparse(sys.call(which = sys.nframe() - 1))
 
 
     check_any <- vapply(any_fn, \(f) f(x), logical(1))
