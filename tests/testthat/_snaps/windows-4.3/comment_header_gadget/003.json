@@ -1,6 +1,6 @@
 {
   "input": {
-    "bt_insert": 1,
+    "bt_insert": 0,
     "cb_include_script_title": true,
     "toggle_size_large": true,
     "txt_author": "Hello",

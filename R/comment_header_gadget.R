@@ -96,7 +96,7 @@ create_gadget_server <- function() {
 
             do_call(insert_comment_header, args = insert_options)
 
-            stop_app()
+            stopApp()
         })
 
         exportTestValues(insert_type = insert_type())
@@ -107,10 +107,6 @@ create_gadget_server <- function() {
 # helpers -------------------------------------------------------------------------------------
 do_call <- function(fn, args) {
     do.call(fn, args)
-}
-
-stop_app <- function() {
-    stopApp()
 }
 
 parse_user_input <- function(value) {
