@@ -1,0 +1,18 @@
+{
+  "input": {
+    "bt_insert": 1,
+    "cb_include_script_title": true,
+    "toggle_size_large": true,
+    "txt_author": "Hello",
+    "txt_description": "Ok",
+    "txt_email": "World",
+    "txt_header": "Header Test",
+    "ui_switcher": "ui_large"
+  },
+  "output": {
+
+  },
+  "export": {
+    "insert_type": "large"
+  }
+}

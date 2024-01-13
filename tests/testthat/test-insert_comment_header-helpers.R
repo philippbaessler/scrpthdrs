@@ -138,7 +138,10 @@ test_that("large_header_constructor() works", {
     header <- large_header_constructor("hello", "world", "foo", "bar", "ok", "abc", "def",
                                        include_additional = TRUE)
 
-    contained <- vapply(c("hello", "world", "foo", "bar", "ok", "abc", "def"), \(x) grepl(x, header), logical(1))
+    contained <- vapply(c("hello", "world", "foo", "bar", "ok", "abc", "def"),
+                        \(x) grepl(x, header),
+                        logical(1))
+
     expect_true(all(contained))
     expect_snapshot(header)
 })
