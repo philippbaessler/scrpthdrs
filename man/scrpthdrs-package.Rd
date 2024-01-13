@@ -4,9 +4,11 @@
 \name{scrpthdrs-package}
 \alias{scrpthdrs}
 \alias{scrpthdrs-package}
-\title{scrpthdrs: Script Headers}
+\title{Script Headers package}
 \description{
-Provide functionality to easily insert a comment section at the top of a R script file with information provided by the user and basic meta data. This package comprises an RStudio addin with a basic GUI.
+Insert comment headers in your R script files opened in RStudio to include basic meta data.
+Learn more about this package in the vignette "insert_script_headers":
+\code{vignette(insert_script_headers, package = "scrpthdrs")}
 }
 \seealso{
 Useful links:

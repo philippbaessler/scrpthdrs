@@ -14,8 +14,93 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(scrpthdrs)
+```{css, echo=FALSE}
+/* styles.css */
+.callout {
+  border-left: 6px solid #a83232;
+  background-color: #f2f2f2; 
+  padding: 5px 15px; 
+  margin: 15px 0; 
+}
 ```
 
-Documentation to be done...
+This package provides functionality to quickly insert a preformatted comment header into your R script files with a basic set of meta data such as
+
+-   script author
+
+-   contact email of author
+
+-   R version and date at the time the header is created
+
+-   a descriptive title of the script
+
+-   script filename
+
+-   description
+
+## Prerequisites
+
+::: callout
+**RStudio is required**
+:::
+
+This package relies on core functionality provided by the RStudio API. As a result, this package will not work as intended if used outside of an RStudio session. The comment header will always be inserted in the file that has the **active focus** in the RStudio editor pane.
+
+## Usage
+
+Use the function `insert_comment_header()` to add a formatted header at the top of your R script:
+
+```{r eval=FALSE, include=FALSE}
+library(scrpthdrs)
+insert_comment_header(author = "My Name", email = "my.email@domain.com")
+```
+
+There are two types of preformatted headers you can select from: `'small'` and `'large'` which are selected via the `type` argument.
+
+The `'small'` header (the **default**) can include *author name* (`author`) and *author email (`email`*) as well as a *script title* (`header`), all of which are optional. To exclude the *author name* use `author = NULL` explicitly. `email` and `header` are excluded by default and must be set explicitly to be included in the header. In addition, the current R version and the current date at the time of the insertion will be included in the comment.
+
+For example,
+
+```{r eval=FALSE, include=FALSE}
+insert_comment_header(author = "My Name",
+                      email = "my.name@domain.com",
+                      header = "This is my script")
+```
+
+```{r echo=FALSE}
+header <- scrpthdrs:::small_header_constructor(
+    author = "My Name",
+    email = "my.name@domain.com",
+    header = "This is my script"
+)
+
+cat(header)
+```
+
+The `'large'` header has a wider footprint and can include *script filename* (`script_title`) and a description (`description`) in addition to the options of the `small` header. By default, the *script filename* will be inserted automatically, if the focused file has a filename (i.e., has already been saved at least once). You can opt out of this behavior by setting `script_title = NULL` or use an arbitrary name with `script_title = my_filename.R`. Select the `large` header by setting `type = 'large'`.
+
+For example, using the `large` type with a file called 'demo.R':
+
+```{r eval=FALSE, include=FALSE}
+insert_comment_header(author = "My Name",
+                      email = "my.name@domain.com",
+                      header = "This is my script",
+                      description = "This is a brief description for demonstration.",
+                      type = "large")
+```
+
+```{r echo=FALSE}
+header <- scrpthdrs:::large_header_constructor(
+    author = "My Name",
+    email = "my.name@domain.com",
+    header = "This is my script",
+    description = "This is a brief description for demonstration.",
+    script_title = "demo.R")
+cat(header)
+```
+
+## Use the RStudio addin
+
+The package registers an RStudio addin on installation. Find the RStudio addin here:
+
+![](images/clipboard-1591808525.png){width=98%}
