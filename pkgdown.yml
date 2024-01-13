@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   insert_script_headers: insert_script_headers.html
-last_built: 2024-01-13T16:13Z
+last_built: 2024-01-13T17:31Z
 urls:
   reference: https://philippbaessler.github.io/scrpthdrs/reference
   article: https://philippbaessler.github.io/scrpthdrs/articles
